@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://bc-cowork.github.io/homepage-astro',
-	output: 'static',
+	site: 'https://bc-cowork.github.io',
+	base: '/homepage-astro',
 	integrations: [mdx(), sitemap()],
 });
