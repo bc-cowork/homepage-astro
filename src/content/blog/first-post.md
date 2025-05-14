@@ -1,12 +1,11 @@
 ---
 title: '빌리크루, 누적 지급액 1조 원 돌파!'
-description: '2000.00.00 ㅣ #bILLYCASH (web_Body)'
-pubDate: 'Jul 08 2022'
+description: '2025.05.14 ㅣ #bILLYCREW'
+pubDate: '2025 05 14'
 heroImage: '/blog-images/test-1.svg'
 ---
 
 
-(web_Body - edit)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Mi eget mauris pharetra et. Non tellus orci ac auctor augue.
 
