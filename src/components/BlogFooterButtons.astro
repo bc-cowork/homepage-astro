@@ -1,0 +1,31 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE, SITE_URL } from '../consts';
+---
+
+
+		<div class="button-layout">
+			<button class="blog-footer-btn">목록으로 돌아가기</button>
+			<button class="blog-footer-btn">기사 원문보기</button>
+		</div>
+<style>
+	.button-layout {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 24px;
+		align-self: stretch;
+	}
+
+	.blog-footer-btn {
+		display: flex;
+		height: 40px;
+		padding: 8px 16px;
+		justify-content: center;
+		align-items: center;
+		gap: 4px;
+		border-radius: 24px;
+		background: var(--Black, #231F20);
+		color: var(--White, #FFFFFF);
+	}
+</style>

@@ -153,3 +153,44 @@ hr {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+
+
+.container {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 16px; /* Default padding for gutters (similar to MUI) */
+	padding-right: 16px;
+	box-sizing: border-box;
+  }
+  
+  /* Responsive max-widths based on MUI breakpoints */
+  @media (min-width: 600px) {
+	.container {
+	  max-width: 540px; /* xs breakpoint */
+	}
+  }
+  
+  @media (min-width: 900px) {
+	.container {
+	  max-width: 720px; /* sm breakpoint */
+	}
+  }
+  
+  @media (min-width: 1200px) {
+	.container {
+	  max-width: 960px; /* md breakpoint */
+	}
+  }
+  
+  @media (min-width: 1536px) {
+	.container {
+	  max-width: 1152px; /* lg breakpoint */
+	}
+  }
+  
+  @media (min-width: 1920px) {
+	.container {
+	  max-width: 1344px; /* xl breakpoint */
+	}
+  }
