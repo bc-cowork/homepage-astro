@@ -1,12 +1,27 @@
 ---
-import Layout from '../layouts/Main.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/about/Hero.astro';
+import Vision from '../components/about/Vision.astro';
+import ServiceBusiness from '../components/about/ServiceBusiness.astro';
+import ServiceProduct from '../components/about/ServiceProduct.astro';
+import ServicePartners from '../components/about/ServicePartners.astro';
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
->
-	<p>
-		About Billycrew
-	</p>
-</Layout>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<Hero />
+		<Vision />
+		<ServiceBusiness />
+		<ServiceProduct />
+		<ServicePartners />
+		<Footer />
+	</body>
+</html>

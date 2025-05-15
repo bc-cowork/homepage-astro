@@ -17,17 +17,18 @@
 		0 16px 32px rgba(var(--gray), 33%);
 }
 @font-face {
-	font-family: 'Atkinson';
-	src: url('/fonts/atkinson-regular.woff') format('woff');
-	font-weight: 400;
+	font-family: 'Inter';
+	src: url('/homepage-astro/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+	font-weight: 100 900; /* Supports all weights from 100 to 900 */
 	font-style: normal;
 	font-display: swap;
 }
+  
 @font-face {
-	font-family: 'Atkinson';
-	src: url('/fonts/atkinson-bold.woff') format('woff');
-	font-weight: 700;
-	font-style: normal;
+	font-family: 'Inter';
+	src: url('/homepage-astro/fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+	font-weight: 100 900; /* Supports all weights from 100 to 900 */
+	font-style: italic;
 	font-display: swap;
 }
 body {

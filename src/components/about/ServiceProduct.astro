@@ -1,0 +1,120 @@
+---
+import { SITE_URL } from '../../consts';
+import ListItems from '../ListItems.astro';
+
+// Product items data
+const PRODUCT_ITEMS = [
+  {
+    value: "1",
+    image: "/assets/frame_1.svg",
+    title: "Billy Cash",
+    text1: "소상공인을 위한",
+    text2: "현금흐름-결제정산 서비스",
+  },
+  {
+    value: "2",
+    image: "/assets/frame_2.svg",
+    title: "Iron Remit",
+    text1: "파트너를 위한 ",
+    text2: "매출관리 서비스 인터페이스",
+  },
+  {
+    value: "3",
+    image: "/assets/frame_3.svg",
+    title: "Billy STO",
+    text1: "소상공인 정산채권 기반",
+    text2: "신탁수익증권 STO 발행(예정)",
+  },
+];
+---
+
+<div class="service-product">
+  <div>
+    <ListItems
+      header="product"
+      subHeader="소상공인을 위한 다양한 서비스를 개발하고 있습니다."
+      text="CFM service for small business owners & settlement bond-based STO development, etc."
+      bgColor="primary.blue"
+    />
+    <div class="product-items">
+      {PRODUCT_ITEMS.map((item, index) => (
+        <div class="product-item" >
+          <img src={`${SITE_URL}${item.image}`} alt={`${item.title} logo`} />
+          <p class="title">{item.title}</p>
+          <p class="text">{item.text1}</p>
+          <p class="text">{item.text2}</p>
+        </div>
+      ))}
+    </div>
+    <hr class="divider" />
+  </div>
+</div>
+
+<style>
+  .service-product {
+    margin-top: 6rem;
+    padding: 0 16px;
+    max-width: 1344px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .product-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8rem;
+    margin-top: 8rem;
+  }
+
+  .product-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-item img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .title {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #848484;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+  }
+
+  .text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: -0.72px;
+    margin: 0;
+    text-align: center;
+  }
+
+  .divider {
+    border: 0;
+    height: 1px;
+    background-color: #000;
+    margin: 20rem 2.5rem 10rem 2.5rem;
+  }
+
+  @media (min-width: 900px) {
+    .product-items {
+      flex-direction: row;
+      margin-top: 15rem;
+      padding: 0 12rem;
+    }
+
+    .product-item {
+      margin-bottom: 0;
+    }
+  }
+</style>

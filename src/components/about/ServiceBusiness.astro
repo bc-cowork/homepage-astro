@@ -1,0 +1,192 @@
+---
+import { SITE_URL } from '../../consts';
+import ListItems from '../ListItems.astro';
+---
+
+<div class="service-business">
+  <div>
+    <ListItems
+      header="service"
+      subHeader="소상공인의 금융을  쉽고 편리하게 바꾸어 갑니다."
+      text="Billy Cash service helps business to make easy and convenience!"
+      bgColor="#9CD3EF"
+    />
+  </div>
+
+  <div class="content-section">
+    
+    <div class="info-stack">
+      <div class="info-text">
+        <p class="title">사업이 쉬워지는 매출관리,</p>
+        <p class="title">복잡한 현금흐름은 그만!</p>
+        <ul class="info-list">
+          <li>정해진 주기에 따라 자동으로 자산을 업데이트하여 고객님의 자산 수익률을 그래프로 볼 수 있어요</li>
+          <li>카드사, PG사마다 서로 다른 결제주기와 시각에 따른 입금액 관리를 일원화하여 관리</li>
+          <li>지불처 정기송금을 자동화하여 현금흐름관리의 복잡함과 피로도를 개선</li>
+        </ul>
+      </div>
+      <div class="image-container">
+        <img src={`${SITE_URL}/assets/service_lap.svg`} alt="Service laptop" />
+      </div>
+    </div>
+
+  </div>
+
+    <div class="content-section-desktop">
+      <div class="image-container">
+        <img src={`${SITE_URL}/assets/service_1.svg`} alt="Service 1" />
+      </div>
+      <div class="info-text">
+        <p class="title">소상공인 중심의 금융선순환 생태계</p>
+        <p class="title">임베디드 투자!</p>
+        <ul class="info-list">
+          <li>소상공인이 수요자이자 공급자인 생태계 구축</li>
+          <li>사업자계좌에 남는 유휴자금을 다른 소상공인의 D+1일 선정산 투자금으로 운용</li>
+          <li>D+1 결제입금액을 수신받은 수요자도 남는 잔여금은 투자금으로 운용</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- <div class="content-section-mobile">
+      <div class="info-text">
+        <p class="title">소상공인 중심의 금융선순환 생태계</p>
+        <p class="title">임베디드 투자!</p>
+        <ul class="info-list">
+          <li>소상공인이 수요자이자 공급자인 생태계 구축</li>
+          <li>사업자계좌에 남는 유휴자금을 다른 소상공인의 D+1일 선정산 투자금으로 운용</li>
+          <li>D+1 결제입금액을 수신받한 수요자도 남는 잔여금은 투자금으로 운용</li>
+        </ul>
+      </div>
+      <div class="image-container">
+        <img src={`${SITE_URL}/assets/service_1.svg`} alt="Service 1" />
+      </div>
+    </div> -->
+
+    <div class="content-section">
+      <div class="info-text">
+        <p class="title">소상공인 맞춤으로 특화된</p>
+        <p class="title">대안신용평가모델(Alternative CSS)제공</p>
+        <ul class="info-list">
+          <li>실시간 상거래 데이터에 기반한 대안신용평가 모델</li>
+          <li>매출이력/객단가/요일별 매출 빈도에 기반한 동적인 리스크 실시간 탐지</li>
+          <li>소상공인 대출/보험을 위한 신용평가모델 </li>
+        </ul>
+      </div>
+      <div class="image-container">
+        <img src={`${SITE_URL}/assets/service_2.svg`} alt="Service 2" />
+      </div>
+    </div>
+
+  <hr class="divider" />
+</div>
+
+<style>
+  .service-business {
+    padding: 0 16px;
+    max-width: 1344px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .content-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    margin-top: 5rem;
+  }
+
+  .content-section-desktop {
+    display: none;
+  }
+
+  .content-section-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    margin-top: 5rem;
+  }
+
+  .info-stack {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+  }
+
+  .info-text {
+    text-align: center;
+  }
+
+  .title {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+    letter-spacing: -1.12px;
+    margin: 0;
+  }
+
+  .info-list {
+    padding-left: 25px;
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    letter-spacing: -0.84px;
+    list-style-type: disc;
+    margin: 1rem 0;
+    text-align: left;
+  }
+
+  .info-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .divider {
+    border: 0;
+    height: 1px;
+    background-color: #000;
+    margin: 20rem 2.5rem 10rem 2.5rem;
+  }
+
+  @media (min-width: 900px) {
+    .content-section {
+      flex-direction: row;
+    }
+
+    .content-section-desktop {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 10rem;
+      margin-top: 12rem;
+    }
+
+    .content-section-mobile {
+      display: none;
+    }
+
+    .info-text {
+      text-align: left;
+    }
+
+    .title {
+      font-size: 28px;
+    }
+
+    .info-list {
+      display: block;
+    }
+  }
+</style>

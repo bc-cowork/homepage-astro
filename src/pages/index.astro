@@ -1,8 +1,13 @@
 ---
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Hero from '../components/home/Hero.astro';
+import AboutCompany from '../components/home/AboutCompany.astro';
+import AboutStakeholders from '../components/home/AboutStakeholders.astro';
+import CompanyHistory from '../components/home/CompanyHistory.astro';
+import AboutTeam from '../components/home/AboutTeam.astro';
 ---
 
 <!doctype html>
@@ -12,12 +17,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body>
 		<Header />
-		<main>
-			<h1>🧑‍🚀 Home</h1>
-			<p>
-				all the homepage content will go here
-			</p>
-		</main>
+		<Hero />
+		<AboutCompany />
+		<AboutStakeholders />
+		<CompanyHistory />
+		<AboutTeam />
 		<Footer />
 	</body>
 </html>

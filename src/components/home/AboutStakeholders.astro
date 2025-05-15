@@ -1,0 +1,56 @@
+---
+import { SITE_URL } from '../../consts';
+import ListItems from '../ListItems.astro';
+
+---
+
+<div class="about-stakeholders">
+  <div>
+    <ListItems
+      header="business stakeholders"
+    />
+  </div>
+
+  <div class="image-container">
+    <img src={`${SITE_URL}/assets/business_stakeholders.svg`} alt="Business stakeholders logo" />
+  </div>
+
+  <hr class="divider" />
+</div>
+
+<style>
+  .about-stakeholders {
+    margin-top: 6rem;
+    padding: 0 16px;
+    max-width: 1344px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0;
+  }
+
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .divider {
+    border: 0;
+    height: 1px;
+    background-color: #000;
+    margin: 4rem 2.5rem;
+  }
+
+  @media (min-width: 900px) {
+    .image-container {
+      padding-bottom: 100px;
+    }
+  }
+</style>

@@ -1,0 +1,98 @@
+---
+import { SITE_URL } from '../../consts';
+import ListItems from '../ListItems.astro';
+
+// Partner data
+const partners = [
+  { src: "/assets/partner-logos/partners_koscom.svg", alt: "Koscom Partner Logo" },
+  { src: "/assets/partner-logos/partners_hana.svg", alt: "Hana Partner Logo" },
+  { src: "/assets/partner-logos/partners_woori.svg", alt: "Woori Partner Logo" },
+  { src: "/assets/partner-logos/partners_deachin.svg", alt: "Deachin Partner Logo" },
+  { src: "/assets/partner-logos/partners_hecto.svg", alt: "Hecto Partner Logo" },
+  { src: "/assets/partner-logos/partners_ksnet.svg", alt: "KSNET Partner Logo" },
+  { src: "/assets/partner-logos/partners_gal.svg", alt: "Galaxia Partner Logo" },
+  { src: "/assets/partner-logos/partners_pfct.svg", alt: "PFCT Partner Logo" },
+  { src: "/assets/partner-logos/partners_welcome.svg", alt: "Welcome Payments Partner Logo" },
+  { src: "/assets/partner-logos/partners_leading.svg", alt: "Leading Partner Logo" },
+  { src: "/assets/partner-logos/partners_hello.svg", alt: "Hello Funding Partner Logo" },
+  { src: "/assets/partner-logos/partners_vd.svg", alt: "VD Partner Logo" },
+  { src: "/assets/partner-logos/partners_menuit.svg", alt: "Menu IT Partner Logo" },
+  { src: "/assets/partner-logos/Partners_EVIT_copy.svg", alt: "Evit Partner Logo" },
+  { src: "", alt: "" },
+];
+---
+
+<div class="service-partners">
+  <div>
+    <ListItems
+      header="partners"
+      subHeader="소상공인들이 중심이 되는 금융생태계 혁신을 함께  해 나갑니다."
+      text="Partners working together to innovate the financial ecosystem centered on small business owners"
+      bgColor="primary.yellow"
+    />
+  </div>
+
+  <div class="partners-grid">
+    {partners.map((partner, index) => (
+      partner.src && (
+        <div class="partner-item" >
+          <div class="partner-logo">
+            <img src={`${SITE_URL}${partner.src}`} alt={partner.alt} />
+          </div>
+        </div>
+      )
+    ))}
+  </div>
+</div>
+
+<style>
+  .service-partners {
+    margin-top: 6rem;
+    margin-bottom: 10rem;
+    padding: 0 16px; 
+    max-width: 1344px; 
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0;
+    justify-items: center;
+    align-items: center;
+    margin-top: 5rem;
+    padding: 0 13rem;
+  }
+
+  .partner-item {
+    justify-self: start;
+    align-self: start;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .partner-logo img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (min-width: 600px) {
+    .service-partners {
+      margin-bottom: 55rem;
+    }
+
+    .partners-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    .partners-grid {
+      grid-template-columns: repeat(5, 1fr);
+      margin-top: 7rem;
+      padding: 0 18rem;
+    }
+  }
+</style>

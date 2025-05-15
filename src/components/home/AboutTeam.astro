@@ -1,0 +1,176 @@
+---
+import { SITE_URL } from '../../consts';
+import ListItems from '../ListItems.astro'; 
+
+// Team items data
+const COMPANY_ITEMS = [
+  {
+    value: "1",
+    image: "/assets/team_1.svg",
+    title: "CEO",
+    name: "이상민",
+    university: "메리츠 증권 ",
+    education: "  코스콤 ",
+    uni2: "",
+  },
+  {
+    value: "2",
+    image: "/assets/team_3.svg",
+    title: "adv. ",
+    name: "조진완",
+    university: "한국금융산업연구원장",
+    education: "CMU 박사",
+    uni2: "Carnegie Mellon University",
+  },
+  {
+    value: "3",
+    image: "/assets/team_4.svg",
+    title: "변호사.",
+    name: "김홍석",
+    university: "IAAG 대표이사",
+    education: "KPN Partners 미국 변호사",
+    uni2: "삼성코닝정밀소재 CCO/상무",
+  },
+  {
+    value: "4",
+    image: "/assets/team_5.svg",
+    title: "adv.",
+    name: "염명수",
+    university: "아이엔엑스 대표",
+    education: "CX/UX 컨설팅",
+    uni2: "",
+  },
+];
+---
+
+<div class="about-team">
+  <div>
+    <ListItems
+      header="team & advisory"
+    />
+  </div>
+
+  <div class="team-items" >
+    {COMPANY_ITEMS.map((item, index) => (
+      <div class="team-item" >
+        <img
+          src={`${SITE_URL}${item.image}`}
+          alt={`${item.name} profile`}
+          class="team-image"
+        />
+        <div class="team-info">
+          <div class="name-title">
+            <p class="title">{item.title}</p>
+            <p class="name">{item.name}</p>
+          </div>
+          <p class="university">{item.university}</p>
+          <p class="education">{item.education}</p>
+          {item.uni2 && <p class="uni2">{item.uni2}</p>}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .about-team {
+    padding: 0 16px;
+    max-width: 1344px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .mobile-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    letter-spacing: -0.64px;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .team-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 12rem;
+  }
+
+  .team-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .team-image {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 2rem;
+    object-fit: contain;
+  }
+
+  .team-info {
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .name-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .title {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  .name {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .university,
+  .education,
+  .uni2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+    text-align: center;
+  }
+
+  @media (min-width: 900px) {
+    .mobile-text {
+      display: none;
+    }
+
+    .team-items {
+      display: flex;
+    }
+
+    .team-item {
+      width: 20%;
+    }
+  }
+
+  @media (max-width: 899px) {
+    .team-items {
+      display: none;
+    }
+
+    .mobile-text {
+      display: block;
+    }
+  }
+</style>

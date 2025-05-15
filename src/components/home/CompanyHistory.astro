@@ -1,0 +1,135 @@
+---
+import ListItems from '../ListItems.astro';
+
+// History items data
+const historyItems = [
+  { textLeft: "2025. 5", textRight: "우리투자증권 Kuanta.QP 공급 계약 체결" },
+  { textLeft: "2025. 4", textRight: "누적지급액 1조원 돌파" },
+  { textLeft: "2024. 11", textRight: "대신증권 통합시세 솔루션 Kuanta.QP 공급 계약 체결" },
+  { textLeft: "2024. 9", textRight: "하나은행 임베디드 금융 제휴 협약" },
+  { textLeft: "2024. 8", textRight: "누적지급액  7,000 억원 돌파" },
+  { textLeft: "2024. 4", textRight: "리딩플러스 제휴 협약" },
+  { textLeft: "", textRight: "PFCT 제휴 협약" },
+  { textLeft: "", textRight: "브이디 컴퍼니 제휴협약" },
+  { textLeft: "2024. 3", textRight: "누적지급액 5,000 억원 돌파" },
+  { textLeft: "2024. 1", textRight: "결제계좌관리 챗봇 '빌리인베스트' 런칭" },
+  { textLeft: "2023. 12", textRight: "코스콤 SOR-통합시세 솔루션 개발 계약 체결" },
+  { textLeft: "2023. 10", textRight: "테이블오더 메뉴잇 임베디드 금융 제휴 협약" },
+  { textLeft: "2023. 9", textRight: "클라우드 포스 아이백스랩 제휴 협약" },
+  { textLeft: "2023. 7", textRight: "코스콤 STO 토큰증권 매칭데이 발표사 선정" },
+  { textLeft: "2023. 4", textRight: "웰컴페이먼츠 업무 제휴 협약" },
+  { textLeft: "2022. 12", textRight: "웰컴저축은행 유동화 상생협력 업무 협약" },
+  { textLeft: "2022. 10", textRight: "누적지급액 1,000 억원 돌파" },
+];
+---
+
+<div class="company-history">
+  <div>
+    <ListItems
+      header="history"
+    />
+  </div>
+
+  <div class="history-items">
+    {historyItems.map((item, index) => (
+      <div class="history-item" >
+        <div class="date">
+          {item.textLeft && (
+            <p>{item.textLeft}</p>
+          )}
+        </div>
+        <div class="description">
+          <p>{item.textRight}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <hr class="divider" />
+</div>
+
+<style>
+  .company-history {
+    margin-top: 0; 
+    padding: 0 16px;
+    max-width: 1344px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .history-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+  }
+
+  .history-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .date {
+    flex: 0 0 20%; 
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .date p {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000;
+    margin: 0;
+    text-align: left;
+  }
+
+  .description {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .description p {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    text-align: left;
+  }
+
+  .divider {
+    border: 0;
+    height: 1px;
+    background-color: #000;
+    margin: 25rem 2.5rem 8rem 2.5rem;
+  }
+
+  @media (min-width: 900px) {
+    .date p {
+      font-size: 24px;
+    }
+
+    .description p {
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: 899px) {
+    .history-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .date {
+      flex: 0 0 33.33%;
+    }
+
+    .description {
+      flex: 0 0 58.33%; 
+    }
+  }
+</style>

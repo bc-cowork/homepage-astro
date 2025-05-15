@@ -1,0 +1,179 @@
+---
+import { SITE_URL } from "../consts";
+
+
+// Define props with default values
+const {
+  header = '',
+  subHeader = '',
+  subHeaderTwo = '',
+  text = '',
+  descOne = '',
+  descTwo = '',
+  bgColor = '',
+  listStyle = 'default'
+} = Astro.props;
+
+const isVisionStyle = listStyle === 'vision';
+---
+
+<div class="list-items">
+  <h2 class="header">{header}</h2>
+
+  {isVisionStyle ? (
+    <div class="vision-layout">
+      <div class="vision-image">
+        <img src={`${SITE_URL}/assets/vision_image.svg`} alt="Vision image" />
+      </div>
+      <div class="vision-content">
+        {(subHeader || subHeaderTwo) && (
+          <p class="sub-header">
+            {subHeader}
+            <br />
+            {subHeaderTwo}
+          </p>
+        )}
+        {text && (
+          <div class="text-box" style={`background-color: ${bgColor}`}>
+            <p class="text">{text}</p>
+          </div>
+        )}
+        {(descOne || descTwo) && (
+          <p class="description">
+            {descOne}
+            <br />
+            {descTwo}
+          </p>
+        )}
+      </div>
+    </div>
+  ) : (
+    <>
+      {(subHeader || subHeaderTwo) && (
+        <p class="sub-header">
+          {subHeader}
+          <br />
+          {subHeaderTwo}
+        </p>
+      )}</>
+      <>
+      {text && (
+        <div class="text-box" style={`background-color: ${bgColor}`}>
+          <p class="text">{text}</p>
+        </div>
+      )}</>
+  )}
+</div>
+
+<style>
+  .list-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+  }
+
+  .header {
+    font-size: 32px;
+    font-weight: 200;
+    letter-spacing: 2.4px;
+    margin: 0 0 3rem;
+    text-align: center;
+  }
+
+  .sub-header {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -2.16px;
+    margin: 0;
+    text-align: center;
+  }
+
+  .text-box {
+    width: 80%;
+    text-align: center;
+    letter-spacing: -0.8px;
+    border-radius: 100px;
+    padding: 8px 0;
+    margin-top: 2rem;
+  }
+
+  .text {
+    font-size: 12px;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  /* Vision layout */
+  .vision-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .vision-image {
+    width: 100%;
+    text-align: center;
+  }
+
+  .vision-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .vision-content {
+    text-align: center;
+  }
+
+  .vision-content .sub-header {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+  .description {
+    font-size: 11px;
+    font-weight: 300;
+    margin: 5rem 0 0;
+    text-align: center;
+  }
+
+  @media (min-width: 900px) {
+    .header {
+      font-size: 40px;
+      margin-bottom: 5rem;
+    }
+
+    .sub-header {
+      font-size: 36px;
+    }
+
+    .text {
+      font-size: 20px;
+    }
+
+    .vision-layout {
+      flex-direction: row;
+      align-items: center;
+      gap: 5rem;
+    }
+
+    .vision-image {
+      width: 33.33%;
+    }
+
+    .vision-content {
+      width: 66.67%;
+    }
+
+    .vision-content .sub-header {
+      font-size: 28px;
+    }
+
+    .description {
+      font-size: 18px;
+    }
+  }
+</style>

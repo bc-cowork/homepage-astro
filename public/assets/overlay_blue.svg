@@ -1,0 +1,11 @@
+<svg width="1920" height="1024" viewBox="0 0 1920 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g style="mix-blend-mode:hard-light">
+<rect x="1920" y="1024" width="1920" height="1024" transform="rotate(180 1920 1024)" fill="url(#paint0_linear_338_874)" fill-opacity="0.7"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_338_874" x1="2880" y1="1024" x2="2880" y2="1642.78" gradientUnits="userSpaceOnUse">
+<stop stop-color="#99DDFF"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

@@ -1,0 +1,143 @@
+---
+import { SITE_URL } from "../../consts";
+import ListItems from "../ListItems.astro";
+
+
+// Define COMPANY_ITEMS as a constant within the component
+const COMPANY_ITEMS = [
+  {
+    value: "1",
+    image: "/assets/company_1.svg",
+    title: "SME 기반의 수요 발굴 및 시장 선점    ",
+    text1: "다양한 금융생태계와의 접점을 기반으로 ",
+    text2: "SME을 위한 새로운 핀테크 시장 발굴 및 서비스 다각화",
+  },
+  {
+    value: "2",
+    image: "/assets/company_3.svg",
+    title: "소상공인 중심의 공급망 금융",
+    text1: "소상공인의 ‘실질적인 자산 운영’ 니즈에 집중",
+    text2: "소상공인은 수요자이자 공급자로서 참여하는 생태계 구축",
+  },
+  {
+    value: "3",
+    image: "/assets/company_2.svg",
+    title: "STO 기반의 공급망금융 구조 혁신 ",
+    text1: "누구나 믿고 이용할 수 있는",
+    text2: "수요공급의 경계가 없는 공급망 금융 생태계 구축",
+  },
+];
+---
+
+<div class="about-company">
+  <ListItems
+    header="we are"
+    subHeader="소상공인의 니즈를 해결할 수 있는"
+    subHeaderTwo="서비스 창출 및 다각화에 집중하고 있습니다."
+    text="creating and diversifying services for small business owners."
+    bgColor="#F4DC91"
+  />
+
+  <div class="company-items">
+    {COMPANY_ITEMS.map((item, index) => (
+      <div class="item">
+        <img src={`${SITE_URL}${item.image}`} alt={`${item.title} logo`} />
+        <h3>{item.title}</h3>
+        <p class="item-text">{item.text1}</p>
+        <p class="item-text">{item.text2}</p>
+      </div>
+    ))}
+  </div>
+
+  <hr class="divider" />
+</div>
+
+<style>
+  .about-company {
+    margin-top: 13rem;
+    padding: 0 16px;
+    max-width: 1344px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .sub-header {
+    font-size: 1.25rem;
+    color: #000;
+    margin: 0 0 1rem;
+    line-height: 1.5;
+  }
+
+  .text {
+    font-size: 1rem;
+    color: #000;
+    margin: 0;
+  }
+
+  .company-items {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 12rem;
+    margin-bottom: 5rem;
+  }
+
+  .item {
+    text-align: center;
+  }
+
+  .item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .item h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 1rem;
+    letter-spacing: -0.96px;
+  }
+
+  .item-text {
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: -0.84px;
+    margin: 0;
+    color: #666;
+  }
+
+  .divider {
+    border: 0;
+    height: 1px;
+    background-color: #000;
+    margin: 4rem 2.5rem;
+  }
+
+  @media (min-width: 900px) {
+    .company-items {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .item {
+      flex: 1;
+      margin-bottom: 0;
+    }
+
+    .item h3 {
+      font-size: 28px;
+    }
+
+    .item-text {
+      font-size: 18px;
+    }
+
+    .company-items {
+      margin-top: 15rem;
+      margin-bottom: 25rem;
+    }
+  }
+</style>

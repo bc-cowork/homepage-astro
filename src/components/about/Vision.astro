@@ -1,0 +1,108 @@
+---
+import ListItems from "../ListItems.astro";
+
+---
+
+<div class="about-company">
+  <ListItems
+    header="vision"
+    subHeader="빌리캐시는 소상공인을 위한 세상을 만들어갑니다."
+    text="Billy Cash  :  Embedded Finance Enabler"
+    descOne="소상공인 현금흐름을 직관적으로 일원화,"
+    descTwo="소상공인이 수요자이자 공급자인 생태계 구축"
+    bgColor="#9CD3EF"
+    listStyle="vision"
+  />
+
+  <hr class="divider" />
+</div>
+
+<style>
+  .about-company {
+    margin-top: 13rem;
+    padding: 0 16px;
+    max-width: 1344px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .sub-header {
+    font-size: 1.25rem;
+    color: #000;
+    margin: 0 0 1rem;
+    line-height: 1.5;
+  }
+
+  .text {
+    font-size: 1rem;
+    color: #000;
+    margin: 0;
+  }
+
+  .company-items {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 12rem;
+    margin-bottom: 5rem;
+  }
+
+  .item {
+    text-align: center;
+  }
+
+  .item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .item h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 1rem;
+    letter-spacing: -0.96px;
+  }
+
+  .item-text {
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: -0.84px;
+    margin: 0;
+    color: #666;
+  }
+
+  .divider {
+    border: 0;
+    height: 1px;
+    background-color: #000;
+    margin: 4rem 2.5rem;
+  }
+
+  @media (min-width: 900px) {
+    .company-items {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .item {
+      flex: 1;
+      margin-bottom: 0;
+    }
+
+    .item h3 {
+      font-size: 28px;
+    }
+
+    .item-text {
+      font-size: 18px;
+    }
+
+    .company-items {
+      margin-top: 15rem;
+      margin-bottom: 25rem;
+    }
+  }
+</style>
