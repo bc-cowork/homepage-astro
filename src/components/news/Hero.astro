@@ -1,0 +1,133 @@
+---
+import { SITE_URL } from "../../consts";
+
+
+// Scroll handler function
+const handleScroll = (sectionId: string) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    console.warn(`No element with ID ${sectionId} found.`);
+  }
+};
+
+
+const mdUp = false; 
+---
+
+<div
+  class="hero"
+  style={`background-image: url(${SITE_URL}/assets/overlay_green.svg), url(${SITE_URL}/assets/hero_news.svg);`}
+>
+  <div class="hero-content">
+    <div class="text-block">
+      <p class="hero-text">
+        <span class="bold">소상공인</span>&nbsp;중심의&nbsp;
+        <span class="bold">임베디드</span>
+        <span class="bold">금융</span>으로
+      </p>
+      <p class="hero-text">
+        <span class="bold">현금흐름 혁신</span>서비스를&nbsp;제공해&nbsp;드립니다
+      </p>
+    </div>
+
+    <!-- Navigation links (visible on md and up) -->
+    <div class="nav-links" >
+      <p class="nav-link" onclick={() => handleScroll('about-company')}>We Are</p>
+      <p class="nav-link" onclick={() => handleScroll('business')}>Business</p>
+      <p class="nav-link" onclick={() => handleScroll('history')}>History</p>
+      <p class="nav-link" onclick={() => handleScroll('team')}>Team</p>
+    </div>
+
+    <!-- Down arrow (visible on md and up) -->
+    {mdUp && (
+      <div class="arrow" onclick={() => handleScroll('about-company')}>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+          <path d="M12 4v12l-4-4-1.41 1.41L12 18.84l5.41-5.43L16 12l-4 4V4z"/>
+        </svg>
+      </div>
+    )}
+  </div>
+</div>
+
+<style>
+  .hero {
+    height: 100dvh;
+    padding: 10px 0;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+  }
+
+  .hero-content {
+    text-align: center;
+    padding-top: 18px;
+  }
+
+  .text-block {
+    margin-bottom: 40px;
+  }
+
+  .hero-text {
+    font-size: 18px;
+    color: white;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .bold {
+    font-weight: 700;
+  }
+
+
+  .nav-links {
+      display: none;
+      justify-content: space-between;
+      width: 90%;
+      padding-top: 40px;
+      color: #1976d2; 
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .nav-link {
+      cursor: pointer;
+    }
+
+  @media (min-width: 900px) {
+    .hero {
+      padding: 0;
+    }
+    .hero-content {
+      padding-top: 50px;
+    }
+    .hero-text {
+      font-size: 36px;
+    }
+    .nav-links {
+      display: none;
+      justify-content: space-between;
+      width: 45%;
+      padding-top: 40px;
+      color: #1976d2; 
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .nav-link {
+      cursor: pointer;
+    }
+    .arrow {
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  }
+
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+</style>
