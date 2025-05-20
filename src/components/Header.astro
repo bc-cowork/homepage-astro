@@ -1,19 +1,24 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE, SITE_URL } from '../consts';
+import { SITE_URL } from '../consts';
 import Logo from './Logo.astro';
+let menuOpen = false;
 ---
 
 <header>
 	<nav>
-			<Logo />
-		<div >
+		<Logo />
+		
+		<!-- Desktop Navigation -->
+		<div class="nav-links">
 			<HeaderLink href={`${SITE_URL}/`}>회사소개</HeaderLink>
 			<HeaderLink href={`${SITE_URL}/about`}>서비스소개</HeaderLink>
 			<HeaderLink href={`${SITE_URL}/blog`}>News</HeaderLink>
 		</div>
-		<div>
-			<a href={`${SITE_URL}/contact-us`} >
+
+		<!-- Contact Button -->
+		<div class="contact-container">
+			<a href={`${SITE_URL}/contact-us`}>
 				<button class="contact-button">
 					Contact Us
 					<span class="plus-icon">
@@ -25,8 +30,25 @@ import Logo from './Logo.astro';
 				</button>
 			</a>
 		</div>
+		<!-- Hamburger -->
+		<button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<rect x="3" y="11.25" width="18" height="1.5" fill="#333333"/>
+				<rect x="3" y="4" width="18" height="1.5" fill="#333333"/>
+				<rect x="3" y="18.5" width="18" height="1.5" fill="#333333"/>
+			</svg>
+		</button>
 	</nav>
+
+	<!-- Mobile Drawer -->
+	<div id="mobileMenu" class="mobile-menu">
+		<HeaderLink href={`${SITE_URL}/`}>회사소개</HeaderLink>
+		<HeaderLink href={`${SITE_URL}/about`}>서비스소개</HeaderLink>
+		<HeaderLink href={`${SITE_URL}/blog`}>News</HeaderLink>
+		<HeaderLink href={`${SITE_URL}/contact-us`}>Contact Us</HeaderLink>
+	</div>
 </header>
+
 <style>
 	header {
 		margin: 0;
@@ -41,15 +63,6 @@ import Logo from './Logo.astro';
 		right: 0;
 		z-index: 1000;
 	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
 	nav {
 		display: flex;
 		align-items: center;
@@ -59,26 +72,15 @@ import Logo from './Logo.astro';
 		font-size: 16px;
 		font-weight: 500;
 	}
+	.nav-links {
+		display: flex;
+		gap: 1em;
+	}
 	nav a {
 		padding: 0.2em 0.5em;
 		color: var(--black);
 		text-decoration: none;
 	}
-
-	nav a svg{
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-
 	.contact-button {
 		display: inline-flex;
 		align-items: center;
@@ -93,22 +95,56 @@ import Logo from './Logo.astro';
 		text-decoration: none;
 		transition: background-color 0.3s ease, box-shadow 0.3s ease;
 	}
-
 	.contact-button:hover {
 		background-color: #f5f5f5;
 		box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 		cursor: pointer;
 	}
-
 	.plus-icon {
 		margin-left: 12px;
 		font-size: 20px;
 		font-weight: bold;
 		line-height: 1;
 	}
+	.hamburger {
+		display: none;
+		background: none;
+		border: none;
+		font-size: 1.5rem;
+		cursor: pointer;
+	}
+	.mobile-menu {
+		display: none;
+		flex-direction: column;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		background: white;
+		box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+		padding: 1em;
+		gap: 1em;
+		z-index: 999;
+	}
+	.mobile-menu a {
+		font-size: 1.2em;
+		text-decoration: none;
+		color: var(--black);
+	}
+	.mobile-menu.open {
+		display: flex;
+	}
+
 	@media (max-width: 720px) {
-		.social-links {
+		.nav-links,
+		.contact-container {
 			display: none;
+		}
+		.hamburger {
+			display: block;
+		}
+		nav {
+			padding: 8px 20px;
 		}
 	}
 </style>

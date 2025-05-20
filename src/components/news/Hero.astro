@@ -8,7 +8,7 @@ import { SITE_URL } from "../../consts";
 >
     <div class="container">
       <p class="hero-text">
-        NEWS <br /> 빌리크루의 새로운 도약과 성장
+        NEWS <br /> 빌리크루의 새로운  <br class="mobile-only" /> 도약과 성장
       </p>
     </div>
 </div>
@@ -30,10 +30,15 @@ import { SITE_URL } from "../../consts";
 
   .hero-text {
     font-family: SUIT;
-    font-size: 18px;
+    font-size: 36px;
     color: black;
     margin: 0;
     line-height: 1.5;
+    padding: 40px;
+  }
+
+  .mobile-only {
+    display: flex;
   }
 
 
@@ -46,6 +51,10 @@ import { SITE_URL } from "../../consts";
       color: black;
       font-size: 48px;
       text-align: left !important;
+    }
+
+    .mobile-only {
+      display: none;
     }
 
   }

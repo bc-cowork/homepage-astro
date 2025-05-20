@@ -10,17 +10,30 @@ const today = new Date();
 			<div>
 				<Logo />
 			</div>
-			<div>
+			<div class="desktop-content">
 				<p style="display: inline; border-right: 1px solid #000;">(주)빌리크루 &nbsp;&nbsp;</p>
 				<p style="display: inline">&nbsp;&nbsp;&nbsp; 대표이사 이상민</p>
 				<p>서울특별시 영등포구 국제금융로2길 17, 6층 608호 (여의도동, 시티플라자)</p>
 				<p>사업자등록번호: 678-87-02665</p>
 				<p>tel: 02-6223-6003 &nbsp;&nbsp; fax: 02-6023-6004</p>
 			</div>
-			<div>
+			<div class="desktop-content">
 				<button id="topButton">
 					TOP ▲
 				</button>
+			</div>
+			<div class="mobile-content">
+				<p>
+					대표자  l  이상민 <br />
+					사업자등록번호  l  678-87-02665<br />
+					주소  l  서울특별시 영등포구 국제금융로2길 17,<br />
+					6층 608호 (여의도동, 시티플라자)<br />
+					이메일  l  cs@billycrew.com<br />
+					tel  l  02-6223-6003<br />
+					fax  l  02-6023-6004<br />
+					<br /><br />
+					© billycrew 2023. All Rights Reserved.
+				</p>
 			</div>
 		</div>
 	</div>
@@ -65,5 +78,39 @@ const today = new Date();
 		font-size: 16px; 
 		font-weight: 500; 
 		cursor: pointer;
+	}
+
+	.mobile-content {
+		display: none;
+	}
+
+
+
+	@media (max-width: 720px) {
+		.footer-content {
+			color: #000000; 
+			font-size: 16px;
+			font-weight: 500; 
+			display: flex; 
+			flex-direction: column; 
+			justify-content: center;
+			padding: 50px 0px 120px 0px;
+		}
+
+		.desktop-content {
+			display: none;
+		}
+
+		.mobile-content {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			margin-top: 25px;
+			color: #666666;
+			font-size: 12px;
+			font-weight: 400;
+		}
 	}
 </style>
