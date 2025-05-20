@@ -3,4 +3,4 @@
 
 export const SITE_URL = '/homepage-astro';
 export const SITE_TITLE = 'Billycrew';
-export const SITE_DESCRIPTION = 'Welcome to my website!';
+export const SITE_DESCRIPTION = 'Welcome to Billycrew!';

@@ -6,14 +6,24 @@ import Logo from './Logo.astro';
 
 <header>
 	<nav>
-		<a href="/">
 			<Logo />
-		</a>
-		<div class="internal-links">
-			<HeaderLink href={`${SITE_URL}/`}>Home</HeaderLink>
+		<div >
+			<HeaderLink href={`${SITE_URL}/`}>회사소개</HeaderLink>
+			<HeaderLink href={`${SITE_URL}/about`}>서비스소개</HeaderLink>
 			<HeaderLink href={`${SITE_URL}/blog`}>News</HeaderLink>
-			<HeaderLink href={`${SITE_URL}/about`}>About</HeaderLink>
-			<HeaderLink href={`${SITE_URL}/contact-us`}>Contact Us</HeaderLink>
+		</div>
+		<div>
+			<a href={`${SITE_URL}/contact-us`} >
+				<button class="contact-button">
+					Contact Us
+					<span class="plus-icon">
+						<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M9.99805 3C10.2742 3 10.498 3.22386 10.498 3.5L10.498 16.5C10.498 16.7761 10.2742 17 9.99805 17C9.7219 17 9.49805 16.7761 9.49805 16.5L9.49805 3.5C9.49805 3.22386 9.7219 3 9.99805 3Z" fill="#231F20"/>
+							<path d="M17 10.0007C17 10.2769 16.7761 10.5007 16.5 10.5007L3.5 10.5007C3.22386 10.5007 3 10.2769 3 10.0007C3 9.72459 3.22386 9.50073 3.5 9.50073L16.5 9.50073C16.7761 9.50073 17 9.72459 17 10.0007Z" fill="#231F20"/>
+						</svg>
+					</span>
+				</button>
+			</a>
 		</div>
 	</nav>
 </header>
@@ -44,6 +54,10 @@ import Logo from './Logo.astro';
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		padding: 20px 40px;
+		font-family: Pretendard, sans-serif;
+		font-size: 16px;
+		font-weight: 500;
 	}
 	nav a {
 		padding: 0.2em 0.5em;
@@ -63,6 +77,34 @@ import Logo from './Logo.astro';
 	.social-links,
 	.social-links a {
 		display: flex;
+	}
+
+	.contact-button {
+		display: inline-flex;
+		align-items: center;
+		padding: 10px 24px;
+		background-color: #fff;
+		border: 1px solid #e4e6ed;
+		border-radius: 50px;
+		font-family: Pretendard, sans-serif;
+		font-size: 16px;
+		font-weight: 500;
+		color: #000;
+		text-decoration: none;
+		transition: background-color 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.contact-button:hover {
+		background-color: #f5f5f5;
+		box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+		cursor: pointer;
+	}
+
+	.plus-icon {
+		margin-left: 12px;
+		font-size: 20px;
+		font-weight: bold;
+		line-height: 1;
 	}
 	@media (max-width: 720px) {
 		.social-links {
