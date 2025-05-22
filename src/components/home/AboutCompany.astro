@@ -3,7 +3,6 @@ import { SITE_URL } from "../../consts";
 import ListItems from "../ListItems.astro";
 
 
-// Define COMPANY_ITEMS as a constant within the component
 const COMPANY_ITEMS = [
   {
     value: "1",
@@ -32,9 +31,8 @@ const COMPANY_ITEMS = [
 <div class="about-company">
   <ListItems
     header="we are"
-    subHeader="소상공인의 니즈를 해결할 수 있는"
-    subHeaderTwo="서비스 창출 및 다각화에 집중하고 있습니다."
-    text="creating and diversifying services for small business owners."
+    subHeader="소상공인의 니즈를 해결할 수 있는 서비스 창출 및 다각화에 집중하고 있습니다."
+    text="Focus on creating and diversifying services that can address the needs of small business owners."
     bgColor="#F4DC91"
   />
 
@@ -54,7 +52,7 @@ const COMPANY_ITEMS = [
 
 <style>
   .about-company {
-    margin-top: 13rem;
+    margin-top: 50px;
     padding: 0 16px;
     max-width: 1344px;
     margin-left: auto;
@@ -79,8 +77,8 @@ const COMPANY_ITEMS = [
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    margin-top: 12rem;
-    margin-bottom: 5rem;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
 
   .item {
@@ -136,8 +134,8 @@ const COMPANY_ITEMS = [
     }
 
     .company-items {
-      margin-top: 15rem;
-      margin-bottom: 25rem;
+      margin-top: 50px;
+      margin-bottom: 50px;
     }
   }
 </style>

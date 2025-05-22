@@ -26,9 +26,9 @@ const partners = [
   <div>
     <ListItems
       header="partners"
-      subHeader="소상공인들이 중심이 되는 금융생태계 혁신을 함께  해 나갑니다."
+      subHeader="소상공인들이 중심이 되는 금융생태계 혁신을 함께  해 나갑니다. "
       text="Partners working together to innovate the financial ecosystem centered on small business owners"
-      bgColor="primary.yellow"
+      bgColor="#F4DC91"
     />
   </div>
 
@@ -43,12 +43,14 @@ const partners = [
       )
     ))}
   </div>
+
+  <hr class="divider" />
 </div>
 
 <style>
   .service-partners {
-    margin-top: 6rem;
-    margin-bottom: 10rem;
+    margin-top: 50px;
+    margin-bottom: 50px;
     padding: 0 16px; 
     max-width: 1344px; 
     margin-left: auto;
@@ -62,8 +64,8 @@ const partners = [
     gap: 0;
     justify-items: center;
     align-items: center;
-    margin-top: 5rem;
-    padding: 0 13rem;
+    margin-top: 50px;
+    padding: 0 100px;
   }
 
   .partner-item {
@@ -78,9 +80,16 @@ const partners = [
     height: auto;
   }
 
+  .divider {
+    border: 0;
+    height: 1px;
+    background-color: #000;
+    margin: 4rem 2.5rem;
+  }
+
   @media (min-width: 600px) {
     .service-partners {
-      margin-bottom: 55rem;
+      margin-bottom: 50px;
     }
 
     .partners-grid {
@@ -91,8 +100,7 @@ const partners = [
   @media (min-width: 900px) {
     .partners-grid {
       grid-template-columns: repeat(5, 1fr);
-      margin-top: 7rem;
-      padding: 0 18rem;
+      margin-top: 50px;
     }
   }
 </style>
