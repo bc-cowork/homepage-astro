@@ -50,9 +50,9 @@ const COMPANY_ITEMS = [
     />
   </div>
 
-  <div class="team-items" >
+  <div class="team-items">
     {COMPANY_ITEMS.map((item, index) => (
-      <div class="team-item" >
+      <div class="team-item">
         <img
           src={`${SITE_URL}${item.image}`}
           alt={`${item.name} profile`}
@@ -81,21 +81,11 @@ const COMPANY_ITEMS = [
     box-sizing: border-box;
   }
 
-  .mobile-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    letter-spacing: -0.64px;
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-
   .team-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
     gap: 2rem;
-    margin-top: 0px;
-    margin-bottom: 350px;
+    margin-top: 0;
+    margin-bottom: 150px; 
   }
 
   .team-item {
@@ -103,6 +93,7 @@ const COMPANY_ITEMS = [
     flex-direction: column;
     align-items: center;
     width: 100%;
+    padding: 15px 0;
   }
 
   .team-image {
@@ -150,27 +141,30 @@ const COMPANY_ITEMS = [
     text-align: center;
   }
 
+  /* Desktop: All items in one row */
   @media (min-width: 900px) {
-    .mobile-text {
-      display: none;
-    }
-
     .team-items {
-      display: flex;
-    }
-
-    .team-item {
-      width: 20%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-items: center;
+      padding: 0 120px;
     }
   }
 
+  /* Mobile: Two items per row */
   @media (max-width: 899px) {
     .team-items {
-      display: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); 
+      justify-items: center;
     }
+  }
 
-    .mobile-text {
-      display: block;
+  /* Extra small screens: One item per row */
+  @media (max-width: 600px) {
+    .team-items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); 
     }
   }
 </style>

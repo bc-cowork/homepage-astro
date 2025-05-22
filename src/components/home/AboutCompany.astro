@@ -29,12 +29,24 @@ const COMPANY_ITEMS = [
 ---
 
 <div class="about-company">
-  <ListItems
-    header="we are"
-    subHeader="소상공인의 니즈를 해결할 수 있는 서비스 창출 및 다각화에 집중하고 있습니다."
-    text="Focus on creating and diversifying services that can address the needs of small business owners."
-    bgColor="#F4DC91"
-  />
+  <span class="desktop-only">
+    <ListItems
+      header="we are"
+      subHeader="소상공인의 니즈를 해결할 수 있는 서비스 창출 및 다각화에 집중하고 있습니다."
+      text="Focus on creating and diversifying services that can address the needs of small business owners."
+      bgColor="#F4DC91"
+    />
+  </span>
+
+  <span class=mobile-only>
+    <ListItems
+      header="we are"
+      subHeader="소상공인의 니즈를 해결할 수 있는"
+      subHeaderTwo="서비스 창출 및 다각화에 집중하고 있습니다."
+      text="Focus on creating and diversifying services that can address the needs of small business owners."
+      bgColor="#F4DC91"
+    />
+  </span>
 
   <div class="company-items">
     {COMPANY_ITEMS.map((item, index) => (
